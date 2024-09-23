@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Features.TimeSystem.Interfaces;
 using Features.TimeSystem.Interfaces.Handlers;
 using UnityEngine;
+using NotImplementedException = System.NotImplementedException;
 
 namespace Features.TimeSystem.Core
 {
@@ -9,13 +10,13 @@ namespace Features.TimeSystem.Core
     {
         private float _timeScale = 1f;
         private bool  _isPaused;
-
-        private float _time = 0f;
+        private bool  _isInitialized;
 
         private readonly List<IUpdateHandler>      _updateHandlers      = new();
         private readonly List<IFixedUpdateHandler> _fixedUpdateHandlers = new();
         private readonly List<ILateUpdateHandler>  _lateUpdateHandlers  = new();
 
+        
         public void SetUpdateProvider(IUpdateProvider updateProvider)
         {
             if (updateProvider == null)
@@ -27,6 +28,11 @@ namespace Features.TimeSystem.Core
             updateProvider.OnUpdate      += OnUpdate;
             updateProvider.OnFixedUpdate += OnFixedUpdate;
             updateProvider.OnLateUpdate  += OnLateUpdate;
+        }
+        
+        public void Initialize()
+        {
+            _isInitialized = true;
         }
 
         public void Subscribe(ITimeCollector timeCollector)
@@ -67,8 +73,8 @@ namespace Features.TimeSystem.Core
 
         private void OnUpdate()
         {
-            if (_isPaused) return;
-            
+            if (_isPaused || !_isInitialized) return;
+
             for (var i = 0; i < _updateHandlers.Count; i++)
             {
                 _updateHandlers[i].OnUpdate(Time.deltaTime * _timeScale);
@@ -77,8 +83,8 @@ namespace Features.TimeSystem.Core
 
         private void OnFixedUpdate()
         {
-            if (_isPaused) return;
-            
+            if (_isPaused || !_isInitialized) return;
+
             for (var i = 0; i < _fixedUpdateHandlers.Count; i++)
             {
                 _fixedUpdateHandlers[i].OnFixedUpdate(Time.fixedDeltaTime * _timeScale);
@@ -87,8 +93,8 @@ namespace Features.TimeSystem.Core
 
         private void OnLateUpdate()
         {
-            if (_isPaused) return;
-            
+            if (_isPaused || !_isInitialized) return;
+
             for (var i = 0; i < _lateUpdateHandlers.Count; i++)
             {
                 _lateUpdateHandlers[i].OnLateUpdate(Time.deltaTime * _timeScale);

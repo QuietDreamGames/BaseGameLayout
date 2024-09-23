@@ -1,6 +1,8 @@
+using Features.System.Interfaces.Handlers;
+
 namespace Features.TimeSystem.Interfaces
 {
-    public interface ITimeSystem 
+    public interface ITimeSystem : IStartableSystemHandler, IPausableSystemHandler
     {
         void SetUpdateProvider(IUpdateProvider updateProvider);
 
@@ -9,8 +11,5 @@ namespace Features.TimeSystem.Interfaces
 
         float GetTimeScale();
         void  SetTimeScale(float timeScale);
-
-        void Pause();
-        void Resume();
     }
 }
