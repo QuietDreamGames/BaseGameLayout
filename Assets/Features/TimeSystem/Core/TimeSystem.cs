@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using Features.TimeSystem.Interfaces;
 using Features.TimeSystem.Interfaces.Handlers;
 using UnityEngine;
-using NotImplementedException = System.NotImplementedException;
 
 namespace Features.TimeSystem.Core
 {

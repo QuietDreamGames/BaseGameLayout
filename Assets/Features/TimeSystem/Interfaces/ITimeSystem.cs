@@ -1,4 +1,4 @@
-using Features.System.Interfaces.Handlers;
+using Features.GameSystem.Interfaces.Handlers;
 
 namespace Features.TimeSystem.Interfaces
 {
