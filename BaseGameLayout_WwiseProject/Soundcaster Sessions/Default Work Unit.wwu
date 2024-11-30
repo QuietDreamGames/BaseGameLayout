@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{41C6804A-95CF-4C3E-8AD8-1673D5F17965}" SchemaVersion="119">
+<WwiseDocument Type="WorkUnit" ID="{41C6804A-95CF-4C3E-8AD8-1673D5F17965}" SchemaVersion="123">
 	<SoundcasterSessions>
 		<WorkUnit Name="Default Work Unit" ID="{41C6804A-95CF-4C3E-8AD8-1673D5F17965}" PersistMode="Standalone"/>
 	</SoundcasterSessions>
