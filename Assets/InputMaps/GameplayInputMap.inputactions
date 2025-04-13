@@ -1,0 +1,54 @@
+{
+    "name": "GameplayInputMap",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "5f3279e5-1026-49f8-b25a-fcafb9240e3e",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "b44bebd0-4649-4a7c-ad95-3078f42b1738",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "HoldClick",
+                    "type": "Button",
+                    "id": "a7fbfc10-cf6a-4e51-a0e9-340df40f82c8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f0d2cd3a-7041-4fb9-9b78-fda69983d418",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7946bbb6-7895-4206-a776-4f93b6d8545b",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Hold,Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HoldClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
