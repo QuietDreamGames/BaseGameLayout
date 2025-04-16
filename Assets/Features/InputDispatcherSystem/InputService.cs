@@ -33,7 +33,12 @@ namespace Features.InputDispatcherSystem
             if (context is { started: false, canceled: false }) return;
             
             // Handle the hold click action
-            Debug.Log("Hold click action performed");
+            
+            var status = context.performed ? "performed" 
+                : context.started ? "started" 
+                : "canceled";
+
+            Debug.Log($"Hold click action {status}");
             OnHoldClickAction?.Invoke(context);
         }
     }

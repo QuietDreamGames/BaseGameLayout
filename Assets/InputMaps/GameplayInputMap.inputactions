@@ -40,7 +40,7 @@
                     "name": "",
                     "id": "7946bbb6-7895-4206-a776-4f93b6d8545b",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "Hold,Press",
+                    "interactions": "Hold",
                     "processors": "",
                     "groups": "",
                     "action": "HoldClick",

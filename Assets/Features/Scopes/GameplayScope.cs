@@ -19,7 +19,7 @@ namespace Features.Scopes
             builder.Register<InputService>(Lifetime.Scoped);
             builder.Register<InputObjectsCollisionService>(Lifetime.Scoped);
             
-            builder.Register<OsuGameService>(Lifetime.Scoped);
+            builder.RegisterEntryPoint<OsuGameService>(Lifetime.Scoped).AsSelf();
 
             builder.RegisterEntryPoint<OsuGameEntryPoint>();
         }

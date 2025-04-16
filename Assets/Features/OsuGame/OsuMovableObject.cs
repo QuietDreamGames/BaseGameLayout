@@ -2,7 +2,7 @@
 
 namespace Features.OsuGame
 {
-    public class OsuMovebleObject : MonoBehaviour
+    public class OsuMovableObject : MonoBehaviour
     {
         
     }
